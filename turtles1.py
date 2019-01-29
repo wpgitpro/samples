@@ -110,6 +110,13 @@ def main():
     my_tuple = ("one", "two", "three")
     print(my_tuple[1])
     
+    my_list = ["Robbo","Steve","John","Gary"]
+    my_list.append("Dave")
+    for name in my_list:
+        print(name)
+        
+    print(my_list.pop())
+    
     current_angle = 0
 
     while True:
@@ -137,6 +144,11 @@ def main():
         print('List is empty!')
     else:
         print(n)
+
+    with open('/home/mrogers/Downloads/data.txt') as f:
+        for line in f:
+            print(line)
+
         
     window.exitonclick()
 
