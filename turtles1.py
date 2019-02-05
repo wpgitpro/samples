@@ -95,7 +95,13 @@ def main():
     """ Main program for my sample python program """
     
     window = turtle.Screen()
+    window.bgcolor('green')
+    print(window.screensize())
+    # window.screensize(canvwidth=2000, canvheight=1600, bg='yellow')
+    
     alex = turtle.Turtle()
+    # alex.shape('square')
+    alex.penup()
 
     testarea = area(3)
     p = Point(1,1)
@@ -104,31 +110,32 @@ def main():
     print(json.dumps({"name":"John", "age":30}))
     
     my_dictionary = {"one":1, "two":2, "three":3}
-    print(my_dictionary)
-    print(my_dictionary["one"])
        
     my_tuple = ("one", "two", "three")
-    print(my_tuple[1])
     
     my_list = ["Robbo","Steve","John","Gary"]
     my_list.append("Dave")
-    for name in my_list:
-        print(name)
-        
-    print(my_list.pop())
+    my_list.pop()
+    del my_list[0]
     
     current_angle = 0
+    current_length = 200
+    print(alex.pos())
 
     while True:
-        current_length = 200
-        current_rads = math.radians(current_angle)
-        print(current_rads)
+
+        # current_rads = math.radians(current_angle)
+        # print(current_rads)
         
-        alex.forward(current_length)        
+        alex.forward(current_length)
+        # print(alex.pos()[0])
+        alex.stamp()
         # alex.left(-current_angle)
         alex.goto(0,0)
         # alex.left(current_angle + 30)
         alex.left(30)
+        
+        # print(alex.heading())
         
         current_angle += 30
         if current_angle >= 360:
@@ -145,7 +152,7 @@ def main():
     else:
         print(n)
 
-    with open('/home/mrogers/Downloads/data.txt') as f:
+    with open('../../Downloads/data.txt') as f:
         for line in f:
             print(line)
 
